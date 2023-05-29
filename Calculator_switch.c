@@ -38,27 +38,42 @@
 int main(){
     printf("Add\nSubtract\nMultiply\nDivide\nEnd\n");
     char c = getchar();
-    int x,y;
-    printf("Enter two numbers: ");
-    scanf("%d %d",&x,&y);
-    switch(c){
-        case 'a':{
-            printf("Result is %d\n",x + y);
-            break;
+    do{   
+        switch(c){
+            case 'a':{
+                int x,y;
+                printf("Enter two numbers: ");
+                scanf("%d %d",&x,&y);
+                printf("Result is %d\n",x + y);
+                break;
+            }
+            case 's':{
+                int x,y;
+                printf("Enter two numbers: ");
+                scanf("%d %d",&x,&y);
+                printf("Result is %d\n",x - y);
+                break;
+            }
+            case 'm':{
+                int x,y;
+                printf("Enter two numbers: ");
+                scanf("%d %d",&x,&y);
+                printf("Result is %d\n",x * y);
+                break;
+            }
+            case 'd':{
+                int x,y;
+                printf("Enter two numbers: ");
+                scanf("%d %d",&x,&y);
+                printf("Result is %d\n",x / y);
+                break;
+            }
+            case 'e':
+                printf("Ending Program\n");
+                break;
+            default:
+                printf("Invalid Input\n");
         }
-        case 's':{
-            printf("Result is %d\n",x - y);
-            break;
-        }
-        case 'm':{
-            printf("Result is %d\n",x * y);
-            break;
-        }
-        case 'd':{
-            printf("Result is %d\n",x / y);
-            break;
-        }
-        default:
-            printf("Invalid input\n");
-    }
+}
+while (c != 'e');
 }
