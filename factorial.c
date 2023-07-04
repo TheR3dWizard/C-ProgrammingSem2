@@ -6,6 +6,6 @@ int fac(int x){
     return x*fac(x-1);
 }
 
-int main(){
-    printf("%d",fac(5));
+int main(int argc){
+    printf("%d",fac(argc));
 }
