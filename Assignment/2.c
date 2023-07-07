@@ -1,32 +1,31 @@
-
+#include <stdlib.h>
 #include <stdio.h>
 
-char *uniqueString(char *str){
+char *uStr(char *str){
     int i = 0, j = 0, k = 0;
-    char *uniqueChars = (char *)malloc(sizeof(char) * 100);
+    char *uChars = (char *)malloc(sizeof(char) * 100);
     while (str[i] != '\0'){
         j = 0;
-        while (uniqueChars[j] != '\0'){
-            if (uniqueChars[j] == str[i]){
+        while (uChars[j] != '\0'){
+            if (uChars[j] == str[i]){
                 break;
             }
             j++;
         }
-        if (uniqueChars[j] == '\0'){
-            uniqueChars[k] = str[i];
+        if (uChars[j] == '\0'){
+            uChars[k] = str[i];
             k++;
         }
         i++;
     }
-    uniqueChars[k] = '\0';
-    return uniqueChars;
+    uChars[k] = '\0';
+    return uChars;
 }
 
 int main(){
     char string[100];
     printf("Enter a string: ");
     fgets(string, 100, stdin);
-    char *uniqueChars = uniqueString(string);
-    printf("Unique characters in the string are: %s\n", uniqueChars);
-    return 0;
+    char *uChars = uStr(string);
+    printf("Unique characters in the string are: %s\n", uChars);
 }
