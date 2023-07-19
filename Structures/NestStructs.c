@@ -5,44 +5,27 @@
 #include <string.h>
 
 
-struct address{
-    int doorno,pincode;
-    char strn[50],city[50];
-};
-
 struct student{
     char name[50],rollno[50];
-    struct address a; 
-};
+    struct address{
+    int doorno;
+    char strn[50];
+}a;
+}arr[100];
 
-void get_student(struct student s){
-    printf("Enter ");
-    scanf("%s",&s.name);
-    printf("\n");
-    printf("Enter ");
-    scanf("%s",&s.rollno);
-    printf("\n");
-    printf("Enter ");
-    scanf("%d",&s.a.doorno);
-    printf("\n");
-    printf("Enter ");
-    scanf("%s",&s.a.pincode);
-    printf("\nEnter strname");
-    scanf("%s",&s.a.strn);
-    printf("Enter ");
-    scanf("%s",&s.a.city);
-    printf("\n");
-    printf("Name = %s\nRollno = %s\nDoorno = %d\nPincode = %d\nStreet Name = %s\nCity = %s\n",s.name,s.rollno,s.a.doorno,s.a.pincode,s.a.strn,s.a.city);
+
+void get_student(struct student arr[],int n){
+    printf("Enter details:\n");
+    scanf("%s %s %d %s",arr[n].name,arr[n].rollno,&arr[n].a.doorno,arr[n].a.strn);
 }
 
 
-void print_student(struct student s){
-    printf("Name = %s\nRollno = %s\nDoorno = %d\nPincode = %d\nStreet Name = %s\nCity = %s\n",s.name,s.rollno,s.a.doorno,s.a.pincode,s.a.strn,s.a.city);
+void print_student(struct student arr[],int n){
+    printf("Name = %s\nRollno = %s\nDoorno = %d\nStreet Name = %s\n",arr[n].name,arr[n].rollno,arr[n].a.doorno,arr[n].a.strn);
 }
 
-int main(){
-    struct student s;
-    get_student(s);
-    printf(" TEST %s \n",s.name);
-    print_student(s);
+
+int main(){;
+    get_student(arr,0);
+    print_student(arr,0);
 }

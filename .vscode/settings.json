@@ -1,6 +1,7 @@
 {
     "C_Cpp.errorSquiggles": "disabled",
     "files.associations": {
-        "NestedStructures.C": "cpp"
+        "NestedStructures.C": "cpp",
+        "stdio.h": "c"
     }
 }
